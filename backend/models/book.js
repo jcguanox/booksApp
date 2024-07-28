@@ -1,7 +1,8 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../config/database");
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js'; // Asegúrate de que el archivo tenga la extensión .js
+
 const Book = sequelize.define(
-  "Book",
+  'Book',
   {
     title: {
       type: DataTypes.STRING,
@@ -16,8 +17,8 @@ const Book = sequelize.define(
     },
   },
   {
-    tableName: "books",
+    tableName: 'books',
   }
 );
 
-module.exports = Book;
+export default Book;

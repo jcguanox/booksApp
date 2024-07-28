@@ -1,10 +1,12 @@
-const express = require("express");
-const bookRoutes = require("./routes/bookRoutes");
-const bodyParser = require("body-parser");
-const sequelize = require("./config/database");
+import express from "express";
+import bookRoutes from "./routes/bookRoutes.js";
+import bodyParser from "body-parser";
+import sequelize from "./config/database.js";
+import cors from "cors";
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use("/api", bookRoutes);
 
 sequelize

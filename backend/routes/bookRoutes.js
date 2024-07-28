@@ -1,7 +1,13 @@
-const express = require("express");
+import express from "express";
+import { getAllBooks, getBookById } from "../controlador/bookController.js";
+
+
 const router = express.Router();
-const bookController = require("../controlador/bookController");
 
-router.get("/books", bookController.getAllBooks);
 
-module.exports = router;
+router.get("/books", getAllBooks);
+
+router.get("/books/:id", getBookById);
+
+export default router;
+

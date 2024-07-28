@@ -1,9 +1,10 @@
-const sequelize = require("../config/database");
-const Book = require("./book");
+import sequelize from '../config/database.js';
+import Book from './book.js';
 
 const db = {
   sequelize,
   Book,
 };
 
-module.exports = db;
+export default db;
+
